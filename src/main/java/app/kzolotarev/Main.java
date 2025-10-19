@@ -15,6 +15,7 @@ public class Main {
 
         String login = scanner.nextLine();
 
+
         switch (login) {
             case "qwerty":
                 System.out.println("Недопустимая комбинация символов");
