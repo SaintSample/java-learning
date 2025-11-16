@@ -1,7 +1,8 @@
 package app.kzolotarev;
 
-import java.util.ArrayList;
-import java.util.List;
+import app.kzolotarev.animals.*;
+import app.kzolotarev.house.*;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,29 +10,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите логин: ");
+        Animal animal = new Animal(3, 5, "Жучка");
+        Animal dirtyAnimal = new Animal(3, 5, "Свинка Пеппа");
 
-        String login = scanner.nextLine();
+        House house = new House(animal);
+        House dirtyPigHouse = new House(dirtyAnimal);
 
-
-        switch (login) {
-            case "qwerty":
-                System.out.println("Недопустимая комбинация символов");
-                break;
-            case "admin":
-                System.out.print("Введите пароль администратора: ");
-
-                if (scanner.nextLine().equals("admin")) {
-                    System.out.println("Вы вошли как администратор");
-                } else {
-                    System.out.println("Неверный пароль администратора!");
-                }
-
-                break;
-            default:
-                System.out.print("Неизветный логин пользователя");
-        }
+        System.out.println("В доме живет " + house.getOwnerName());
+        System.out.println("В сыинарнике живет " + dirtyPigHouse.getOwnerName());
     }
 }
